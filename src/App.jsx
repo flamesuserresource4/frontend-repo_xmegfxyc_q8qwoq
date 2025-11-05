@@ -1,28 +1,122 @@
-import { useState } from 'react'
+import Navbar from './components/Navbar.jsx';
+import Services from './components/Services.jsx';
+import Contact from './components/Contact.jsx';
+import CookieConsent from './components/CookieConsent.jsx';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
+    <div className="min-h-screen text-gray-900 bg-white">
+      <Navbar />
+
+      {/* Hero */}
+      <section id="home" className="scroll-mt-24 bg-gradient-to-b from-blue-50 to-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+          <div className="grid gap-10 lg:grid-cols-2 items-center">
+            <div>
+              <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-gray-900">
+                Porte, finestre, parquet, zanzariere e scale di qualità
+              </h1>
+              <p className="mt-4 text-lg text-gray-700">
+                Di Porta in Finestra è il tuo negozio di fiducia per soluzioni su misura: consulenza, fornitura e posa
+                professionale con attenzione ai dettagli e ai tempi.
+              </p>
+              <div className="mt-8 flex flex-wrap gap-3">
+                <a href="#servizi" className="inline-flex items-center justify-center rounded-md bg-blue-600 px-5 py-3 text-white font-semibold hover:bg-blue-700">Scopri i servizi</a>
+                <a href="#contattaci" className="inline-flex items-center justify-center rounded-md border border-gray-300 px-5 py-3 font-semibold text-gray-800 hover:bg-gray-50">Richiedi un preventivo</a>
+              </div>
+            </div>
+            <div className="relative">
+              <div className="aspect-[4/3] w-full rounded-2xl bg-white shadow-xl border border-gray-100 overflow-hidden">
+                <img
+                  src="https://images.unsplash.com/photo-1560185008-b033106af2fb?q=80&w=1600&auto=format&fit=crop"
+                  alt="Showroom di porte e finestre"
+                  className="h-full w-full object-cover"
+                />
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
+      </section>
+
+      {/* Chi siamo */}
+      <section id="chi-siamo" className="scroll-mt-24 py-20">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl">
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900">Chi siamo</h2>
+            <p className="mt-4 text-gray-700">
+              Siamo un team con oltre 20 anni di esperienza nella vendita e posa di serramenti e finiture.
+              Collaboriamo con i migliori marchi italiani ed europei, offrendo soluzioni su misura per abitazioni,
+              negozi e uffici. Dalla scelta dei materiali all’installazione, seguiamo ogni progetto con cura artigianale.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Servizi */}
+      <Services />
+
+      {/* Dove siamo */}
+      <section id="dove-siamo" className="scroll-mt-24 py-20">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-8 lg:grid-cols-2 items-start">
+            <div>
+              <h2 className="text-3xl font-bold tracking-tight text-gray-900">Dove siamo</h2>
+              <p className="mt-3 text-gray-700">Ci trovi a Roma, facilmente raggiungibili con parcheggio dedicato.</p>
+              <ul className="mt-6 space-y-2 text-gray-700">
+                <li><span className="font-medium">Indirizzo:</span> Via Esempio 10, 00100 Roma</li>
+                <li><span className="font-medium">Orari:</span> Lun–Ven 9:00–13:00 / 15:00–19:00, Sab 9:30–13:00</li>
+              </ul>
+            </div>
+            <div className="w-full rounded-xl overflow-hidden border border-gray-200 shadow-sm">
+              <iframe
+                title="Mappa negozio"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d23886.54326610872!2d12.4829329!3d41.8933203!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132f61a8d5a262ab%3A0xdea97f6a1e1b2b7c!2sRoma%20RM!5e0!3m2!1sit!2sit!4v1700000000000!5m2!1sit!2sit"
+                width="100%"
+                height="360"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contatti */}
+      <Contact />
+
+      {/* Policy (Privacy e Cookie) */}
+      <section id="policy" className="scroll-mt-24 py-16 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-bold tracking-tight text-gray-900">Privacy e Cookie Policy</h2>
+          <div className="mt-4 space-y-4 text-gray-700">
+            <p>
+              Questo sito rispetta il GDPR: raccogliamo solo i dati necessari a erogare i servizi richiesti.
+              Le preferenze cookie possono essere gestite tramite il pulsante in basso a destra.
+            </p>
+            <p>
+              Titolare del trattamento: Di Porta in Finestra – privacy@diportainfinestra.it. I dati non vengono ceduti a terzi
+              senza consenso, salvo obblighi di legge. Puoi richiedere accesso, rettifica o cancellazione dei dati scrivendoci.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="border-t border-gray-100">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-sm text-gray-600">© {new Date().getFullYear()} Di Porta in Finestra. Tutti i diritti riservati.</p>
+          <div className="flex items-center gap-4 text-sm">
+            <a className="text-gray-700 hover:text-blue-600" href="#policy">Privacy</a>
+            <a className="text-gray-700 hover:text-blue-600" href="#policy">Cookie</a>
+          </div>
+        </div>
+      </footer>
+
+      <CookieConsent />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
