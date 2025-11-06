@@ -8,7 +8,7 @@ const services = [
   },
   {
     title: 'Finestre',
-    description: 'Efficienza energetica, isolamento acustico e finiture di pregio.',
+    description: "Efficienza energetica, isolamento acustico e finiture di pregio.",
     icon: Shield,
   },
   {
@@ -30,7 +30,7 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="servizi" className="scroll-mt-24 py-20 bg-gray-50">
+    <section id="servizi" className="scroll-mt-24 py-20 bg-amber-50/40">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900">I nostri servizi</h2>
@@ -38,9 +38,9 @@ export default function Services() {
         </div>
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((s) => (
-            <div key={s.title} className="group rounded-xl border border-gray-200 bg-white p-6 shadow-sm hover:shadow-md transition-shadow">
+            <div key={s.title} className="group rounded-xl border border-amber-100 bg-white p-6 shadow-sm hover:shadow-md transition-shadow">
               <div className="flex items-center gap-3">
-                <s.icon className="h-6 w-6 text-blue-600" />
+                <s.icon className="h-6 w-6 text-amber-700" />
                 <h3 className="text-lg font-semibold text-gray-900">{s.title}</h3>
               </div>
               <p className="mt-3 text-gray-600">{s.description}</p>

@@ -2,36 +2,36 @@ import Navbar from './components/Navbar.jsx';
 import Services from './components/Services.jsx';
 import Contact from './components/Contact.jsx';
 import CookieConsent from './components/CookieConsent.jsx';
+import Spline from '@splinetool/react-spline';
 
 function App() {
   return (
     <div className="min-h-screen text-gray-900 bg-white">
       <Navbar />
 
-      {/* Hero */}
-      <section id="home" className="scroll-mt-24 bg-gradient-to-b from-blue-50 to-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-          <div className="grid gap-10 lg:grid-cols-2 items-center">
-            <div>
-              <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-gray-900">
-                Porte, finestre, parquet, zanzariere e scale di qualità
-              </h1>
-              <p className="mt-4 text-lg text-gray-700">
-                Di Porta in Finestra è il tuo negozio di fiducia per soluzioni su misura: consulenza, fornitura e posa
-                professionale con attenzione ai dettagli e ai tempi.
+      {/* Hero con cover Spline a tutta larghezza */}
+      <section id="home" className="relative scroll-mt-24 h-[70vh] sm:h-[80vh]">
+        {/* Spline cover */}
+        <div className="absolute inset-0">
+          <Spline
+            scene="https://prod.spline.design/vc19ejtcC5VJjy5v/scene.splinecode"
+            style={{ width: '100%', height: '100%' }}
+          />
+          {/* Overlay per leggibilità - non blocca interazioni */}
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70" />
+        </div>
+
+        {/* Contenuto hero */}
+        <div className="relative z-10 h-full">
+          <div className="max-w-6xl mx-auto h-full px-4 sm:px-6 lg:px-8 flex items-center">
+            <div className="max-w-2xl text-white">
+              <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight">Porte, finestre, parquet, zanzariere e scale</h1>
+              <p className="mt-4 text-lg text-white/90">
+                Soluzioni su misura con materiali di qualità e posa professionale. Comfort, isolamento ed estetica che durano nel tempo.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
-                <a href="#servizi" className="inline-flex items-center justify-center rounded-md bg-blue-600 px-5 py-3 text-white font-semibold hover:bg-blue-700">Scopri i servizi</a>
-                <a href="#contattaci" className="inline-flex items-center justify-center rounded-md border border-gray-300 px-5 py-3 font-semibold text-gray-800 hover:bg-gray-50">Richiedi un preventivo</a>
-              </div>
-            </div>
-            <div className="relative">
-              <div className="aspect-[4/3] w-full rounded-2xl bg-white shadow-xl border border-gray-100 overflow-hidden">
-                <img
-                  src="https://images.unsplash.com/photo-1560185008-b033106af2fb?q=80&w=1600&auto=format&fit=crop"
-                  alt="Showroom di porte e finestre"
-                  className="h-full w-full object-cover"
-                />
+                <a href="#servizi" className="inline-flex items-center justify-center rounded-md bg-amber-500 px-5 py-3 text-white font-semibold hover:bg-amber-600">Scopri i servizi</a>
+                <a href="#contattaci" className="inline-flex items-center justify-center rounded-md border border-white/30 px-5 py-3 font-semibold text-white hover:bg-white/10">Richiedi un preventivo</a>
               </div>
             </div>
           </div>
@@ -87,7 +87,7 @@ function App() {
       <Contact />
 
       {/* Policy (Privacy e Cookie) */}
-      <section id="policy" className="scroll-mt-24 py-16 bg-gray-50">
+      <section id="policy" className="scroll-mt-24 py-16 bg-amber-50/50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold tracking-tight text-gray-900">Privacy e Cookie Policy</h2>
           <div className="mt-4 space-y-4 text-gray-700">
@@ -108,8 +108,8 @@ function App() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-sm text-gray-600">© {new Date().getFullYear()} Di Porta in Finestra. Tutti i diritti riservati.</p>
           <div className="flex items-center gap-4 text-sm">
-            <a className="text-gray-700 hover:text-blue-600" href="#policy">Privacy</a>
-            <a className="text-gray-700 hover:text-blue-600" href="#policy">Cookie</a>
+            <a className="text-gray-700 hover:text-amber-700" href="#policy">Privacy</a>
+            <a className="text-gray-700 hover:text-amber-700" href="#policy">Cookie</a>
           </div>
         </div>
       </footer>
