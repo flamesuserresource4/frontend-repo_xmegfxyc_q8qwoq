@@ -3,6 +3,7 @@ import Services from './components/Services.jsx';
 import Contact from './components/Contact.jsx';
 import CookieConsent from './components/CookieConsent.jsx';
 import Spline from '@splinetool/react-spline';
+import Gallery from './components/Gallery.jsx';
 
 function App() {
   return (
@@ -37,6 +38,9 @@ function App() {
           </div>
         </div>
       </section>
+
+      {/* Galleria in home */}
+      <Gallery />
 
       {/* Chi siamo */}
       <section id="chi-siamo" className="scroll-mt-24 py-20">
